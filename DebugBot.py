@@ -6,10 +6,10 @@ client = OpenAI()
 
 #content = "Can you generate a conversation between a shopkeeper and a customer."
 
-def generate_conversation(content_input):
+def debugger(content_input):
     assistant = client.beta.assistants.create(
         name="debug_bot",
-        instructions="You are a helpful question generator bot, who asks the user questions related to only looping concepts in C programming language. The user sets easy, medium or hard based on that you have to generate questions. Then the user provides answer to your question you need to check if the answer is right. If it is right then you should print (Amazing! you did it) and then generate another question . If the user gives wrong answer you should print (Sorry it's wrong, try again).  You should not correct the user or solve the question for the user if the user's answer is wrong. They have to try again. You are not supposed to print the correct answer.",
+        instructions="You are a helpful debugger and doubt solver bot. The user may give you code snippets and ask to debug or user may ask you doubt related to programming in c. You should answer to the point, restrict your answer character limit. You need to correct the wrong code given by the user and provide the corrected code.",
         #tools=[{"type": "retrieval"}],
         model="gpt-3.5-turbo-0125"  # or any other language-focused model
     )
@@ -35,7 +35,7 @@ def generate_conversation(content_input):
         thread_id=thread.id,
         assistant_id=assistant.id,
         #messages=messages_data,
-        instructions="Please address the user as User. Consider the user as beginner "
+        instructions="Please address the user as a student. Consider the user as beginner. "
     )
 
     #print(run)
@@ -54,4 +54,4 @@ def generate_conversation(content_input):
 
     return messages.data[0].content[0].text.value
 
-#generate_conversation(content)
+#debugger(content)
