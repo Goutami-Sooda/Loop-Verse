@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Loop Zone</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/templatemo-lugx-gaming.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/owl.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/animate.css') }}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+TemplateMo 589 lugx gaming
+
+https://templatemo.com/tm-589-lugx-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo">
+                        <img src="{{ url_for('static', filename='assets/images/rv_logo.jpg') }}" alt="" style="width: 138px;">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="/">Home</a></li>
+                      <li><a href="AIDebugger">AI Debugger</a></li>
+                      <li><a href="Visualizer">Visualizer</a></li>
+                      <li><a href="TriviaBot">Trivia Bot</a></li>
+                      <li><a href="MatchTiles" class="active">Match Tiles</a></li>
+                      <li><a href="#">Loop Back</a></li>
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="caption header-text">
+            <h6>Welcome to Loop Zone!</h6>
+            <h2>Your destination to hone your programming skills!</h2>
+            <p>Loop Zone offers a complete suite of tools to help you learn Looping Statements in C. Ranging from AI-powered Debugger tool, and Trivia Question Bot, it offers a sophisticated visualizer tool using PythonTutor to clearly visualize the loop iterations and code. In addition, the Mini Games turn learning into a fun and enjoyable activity. Take a deep breath and dive into the world of Looping!</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-image">
+            <img src="{{ url_for('static', filename='assets/images/code_img.jpg') }}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{{ url_for('static', filename='assets/images/featured-01.png') }}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>AI Debugger</h4>
+              <h10>AI powered tool to solve all your programming related doubts and debug errenous code.</h10>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{{ url_for('static', filename='assets/images/featured-02.png') }}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Visualizer</h4>
+              <h10>Creative tool to visualize the sequence of execution of programs and understand the working of Loops.</h10>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{{ url_for('static', filename='assets/images/featured-03.png') }}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Trivia Bot</h4>
+              <h10>AI powered tool that generates questions dynamically and verifies user's answer.</h10>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="{{ url_for('static', filename='assets/images/featured-04.png') }}" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Match Tiles</h4>
+              <h10>Matching the Tiles is a fun and engaging way to learn and memorize concepts.</h10>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section trending">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h2>Why Loops?</h2>
+            <!--h2>Programming was </h2>-->
+            <h10>Did you know that using looping statements can significantly improve the efficiency of your code by automating repetitive tasks?</h10>
+            <h10>Nature is full of examples of looping patterns, from the cycles of the seasons to the repetitive behaviors of animals and the spirals found in shells and plants.</h10>
+            <h10>Understanding looping statements is a fundamental skill for any programmer, and mastering them opens up endless possibilities for building innovative software solutions.</h10>
+          </div>
+        </div>
+        <!--<div class="col-lg-6">
+          <div class="main-button">
+            <a href="shop">View All</a>
+          </div>
+        </div>-->
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/trending-01.jpg') }}" alt=""></a>
+              <span class="price"><em>$28</em>$20</span>
+            </div>
+            <div class="down-content">
+              <span class="category">Action</span>
+              <h4>Assasin Creed</h4>
+              <a href="product-details"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/trending-02.jpg') }}" alt=""></a>
+              <span class="price">$44</span>
+            </div>
+            <div class="down-content">
+              <span class="category">Action</span>
+              <h4>Assasin Creed</h4>
+              <a href="product-details"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/trending-03.jpg') }}" alt=""></a>
+              <span class="price"><em>$64</em>$44</span>
+            </div>
+            <div class="down-content">
+              <span class="category">Action</span>
+              <h4>Assasin Creed</h4>
+              <a href="product-details"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/trending-04.jpg') }}" alt=""></a>
+              <span class="price">$32</span>
+            </div>
+            <div class="down-content">
+              <span class="category">Action</span>
+              <h4>Assasin Creed</h4>
+              <a href="product-details"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<div class="section most-played">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h6>TOP GAMES</h6>
+            <h2>Most Played</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="main-button">
+            <a href="shop">View All</a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/top-game-01.jpg') }}" alt=""></a>
+            </div>
+            <div class="down-content">
+                <span class="category">Adventure</span>
+                <h4>Assasin Creed</h4>
+                <a href="product-details">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/top-game-02.jpg') }}" alt=""></a>
+            </div>
+            <div class="down-content">
+                <span class="category">Adventure</span>
+                <h4>Assasin Creed</h4>
+                <a href="product-details">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/top-game-03.jpg') }}" alt=""></a>
+            </div>
+            <div class="down-content">
+                <span class="category">Adventure</span>
+                <h4>Assasin Creed</h4>
+                <a href="product-details">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/top-game-04.jpg') }}" alt=""></a>
+            </div>
+            <div class="down-content">
+                <span class="category">Adventure</span>
+                <h4>Assasin Creed</h4>
+                <a href="product-details">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/top-game-05.jpg') }}" alt=""></a>
+            </div>
+            <div class="down-content">
+                <span class="category">Adventure</span>
+                <h4>Assasin Creed</h4>
+                <a href="product-details">Explore</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/top-game-06.jpg') }}" alt=""></a>
+            </div>
+            <div class="down-content">
+                <span class="category">Adventure</span>
+                <h4>Assasin Creed</h4>
+                <a href="product-details">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section categories">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Categories</h6>
+            <h2>Top Categories</h2>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Action</h4>
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/categories-01.jpg') }}" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Action</h4>
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/categories-05.jpg') }}" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Action</h4>
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/categories-03.jpg') }}" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Action</h4>
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/categories-04.jpg') }}" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Action</h4>
+            <div class="thumb">
+              <a href="product-details"><img src="{{ url_for('static', filename='assets/images/categories-05.jpg') }}" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+  <div class="section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="shop">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>Meme time!</h6><!--add a nice meme-->
+                  <h2>Go Pre-Order Buy & Get Best <em>Prices</em> For You!</h2>
+                </div>
+                <p>Lorem ipsum dolor consectetur adipiscing, sed do eiusmod tempor incididunt.</p>
+                <!--<div class="main-button">
+                  <a href="Visualizer">Get started</a> 
+                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-lg-2 align-self-end">
+          <div class="subscribe">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>Meme time!</h6>
+                  <h2>Get Up To $100 Off Just Buy <em>Subscribe</em> Newsletter!</h2>  <!--add a nice meme-->
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Design Thinking Lab - RV College of Engineering © 2024 </p>
+        <p>Team Members: Goutami Sooda, Ahana Patil, Arya Vinod, Chandana S - 3rd Sem CSE</p>      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/isotope.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/owl-carousel.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/counter.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
+  </body>
+</html>
