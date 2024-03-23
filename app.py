@@ -1,5 +1,13 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 import QnABot, DebugBot
+from flask import Flask
+from flask import render_template
+from flask import json
+from flask import request
+import random
+import sys
+import ast # module to transform a string to a dictionary
+import questions
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -18,10 +26,10 @@ def Visualizer():
 @app.route('/TriviaBot')
 def TriviaBot():
     return render_template('TriviaBot.html')
-
+'''
 @app.route('/MatchTiles')
 def MatchTiles():
-    return render_template('MatchTiles.html')
+    return redirect("http://localhost:3000/")'''
 
 @app.route('/debug_msg', methods=['POST'])
 def debug_msg():
@@ -63,6 +71,83 @@ def verify_answer():
         
     return jsonify({'response': ai_feedback})
 
+users = {}
+
+@app.route('/MatchTiles')
+def MatchTiles():
+    return render_template("indexGame.html"), 200
+
+@app.route("/intro", methods = ["POST"])
+def intro():
+	post_obj = request.json
+	post_obj["board"] = make_board(post_obj["level"])
+	users[post_obj["username"]] = post_obj
+	return json.dumps(post_obj), 200
+
+@app.route("/card", methods = ["POST"])
+def card():
+	post_obj = request.json
+	choice = post_obj["choice"]
+	choice = ast.literal_eval(choice) # converts the str to dict
+	client_name = post_obj["username"]
+	client = users[client_name]
+	client_board = client["board"]
+	info = {}
+	info["value"] = client_board[int(choice["bigBox"])][int(choice["smallerBox"])]
+	info["id"] = choice["id"]
+	return json.dumps(info), 200
+
+@app.errorhandler(404)
+def page_not_found(err):
+	return render_template("404.html"), 400
+
+'''
+	Function: make_board
+	 Purpose: Creates and returns an array containing a 2-D array of a size provided
+			  through the function parameters.
+		  in: size 
+'''
+
+def make_board(size):
+	double = size * size
+	pool = []
+	pool_two = []
+	board = []
+
+	for i in range(int(double / 2)):
+		pool.append(i)
+		pool_two.append(i)
+
+	larger_pool = []	#Final list of integers on board - 2 of each
+	for i in range(double):
+		if len(pool) != 0:
+			random_draw = pool[random.randint(0, len(pool) - 1)]
+			pool.remove(random_draw)
+			larger_pool.append(questions.qlist[random_draw])
+		elif len(pool) == 1:
+			random_draw = pool[0]
+			pool.remove(random_draw)
+			larger_pool.append(questions.qlist[random_draw])
+
+		if len(pool_two) != 0:
+			random_draw = pool_two[random.randint(0, len(pool_two) - 1)]
+			pool_two.remove(random_draw)
+			larger_pool.append(questions.alist[random_draw])
+		elif len(pool_two) == 1:
+			random_draw = pool_two[0]
+			pool_two.remove(random_draw)
+			larger_pool.append(questions.alist[random_draw])
+	#print(larger_pool)
+
+	for i in range(size):	
+		mini_board = [] #List of each row
+		for j in range(size):
+			mini_board.append(larger_pool[0])
+			larger_pool.remove(larger_pool[0])
+		board.append(mini_board)
+		#print(mini_board)
+
+	return board
 
 if __name__ == '__main__':
     app.run(debug=True)
