@@ -7,3 +7,6 @@ venv/
 
 # Log files
 *.log
+
+# Environment files
+*.env
