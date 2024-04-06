@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Trivia Bot</title>
+    <title>AR Quizventure</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -78,8 +78,8 @@ https://templatemo.com/tm-589-lugx-gaming
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3>Trivia Bot</h3>
-          <span class="breadcrumb"><a href="#">Home</a>  >  Trivia Bot</span>
+          <h3>AR Quizventure</h3>
+          <span class="breadcrumb"><a href="#">Home</a>  >  AR Quizventure</span>
         </div>
       </div>
     </div>
@@ -88,81 +88,80 @@ https://templatemo.com/tm-589-lugx-gaming
   <div class="contact-page section">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 align-self-center">
+        <div class="col-lg-7 align-self-center">
           <div class="left-text">
             <div class="section-heading">
-              <h6>Trivia Bot</h6>
-              <h2>Try out our dynamic Question bot!</h2>
+              <h6>AR Quizventure</h6>
+              <h2>Try out our AR Quizventure, a cool Instagram filter to make learning fun!</h2>
             </div>
-            <p>Want to test out your understanding of looping Statements? Here's the AI powered bot that generates custom questions and veries your answer too. Choose the level of difficulty and get mind stirring questions generated for you. The bot will let you know the answer after your first attempt.</p>
-            <ul>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="right-content">
-            <div class="row">
-              <div class="col-lg-12">
-                <!--Python Tutor Visualizer
-                <div id="pytut">
-                  <iframe width="800" height="500" frameborder="0"
-                  src="https://pythontutor.com/iframe-embed.html#code=x%20%3D%205%0Ay%20%3D%2010%0Az%20%3D%20x%20%2B%20y&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=3&heapPrimitives=nevernest&origin=opt-frontend.js&py=2&rawInputLstJSON=%5B%5D&textReferences=false">
-                  </iframe>
-                </div>-->
-              </div>
-
-              <div class="col-lg-12">
-                <form id="bot-form" action="/generate_ques" method="post">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <fieldset>
-                        <input type="text" name="level" id="level" placeholder="Level - Easy/ Medium/ Hard" autocomplete="on" required>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-6">
-                        <fieldset>
-                          <button type="submit" id="form-submit" class="orange-button">Start</button> <!--action to submit it to pyscript-->
-                        </fieldset>
-                    </div>
-                    <div><br></div>
-                    <div class="col-lg-12">
-                        <fieldset>
-                            <textarea name="question" id="question" placeholder="Question is loading..."></textarea>
-                        </fieldset>
-                    </div>
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <textarea name="Answer" id="Answer" placeholder="Your answer here..."></textarea>
-                      </fieldset>
-                    </div>
-                    <div class="col-lg-12">
-                      <fieldset>
-                        <button type="button" id="check-answer" class="yellow-button">Check your answer</button></fieldset>
+                <p>Bored with the usual old-style quizzing? Here's our AR powered instagram filter that brings in a whole new immersive quizzing environment. So, grab your phone and scan the QR Code to try out the filter now!</p>
+                <div class="row">
+                  <div class="col-lg-8 align-self-center">
+                    <h10>Instructions: - </h10></br>
+                        <p>
+                           1. Scan the QR Code using your smartphone.<br>
+                           2. Tap on the welcome screen.<br>
+                           3. To choose an answer for a question, just tilt your head towards the left or right based on the desired option.<br>
+                           4. Continue the process - while(!end){repeat step-3}.<br>
+                           5. Total score will be displayed at the end of the quiz.
+                        </p>
+                  </div>
+                  <div class="col-lg-1 align-self-center">
+                    <div id="qrcode">
+                        <a href="/" class="qrcode">
+                          <img src="{{ url_for('static', filename='assets/images/qrcb.png') }}" alt="" style="width: 200px;">
+                        </a>
                     </div>
                   </div>
-                </form>
-              </div>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="col-lg-5 align-self-center">
+          <div class="right-content">
+            <div class="demo image section">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div id="demo">
+                        <a href="/" class="demo1">
+                          <img src="{{ url_for('static', filename='assets/images/arquiz1.jpeg') }}" alt="" style="width: 200px;">
+                        </a>
+                    </div>
+                  </div>
+                  <div class="col-lg-5">
+                    <div id="demo">
+                        <a href="/" class="demo2">
+                          <img src="{{ url_for('static', filename='assets/images/arquiz2.jpeg') }}" alt="" style="width: 200px;">
+                        </a>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
+        </div>-->
+        <div class="col-lg-5 align-self-center">
+            <div class="right-content">
+                <div class="demo image section" style="background-color: #f0f8ff; padding: 20px; border-radius: 15px;"> <!-- Set background color and padding here -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div id="demo">
+                                <a href="/" class="demo1">
+                                    <img src="{{ url_for('static', filename='assets/images/arquiz1.jpeg') }}" alt="" style="width: 200px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div id="demo">
+                                <a href="/" class="demo2">
+                                    <img src="{{ url_for('static', filename='assets/images/arquiz2.jpeg') }}" alt="" style="width: 200px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="contact-page section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 align-self-center">
-          <div class="left-text">
-            <div class="section-heading">
-              <h6>Live Code Editor</h6>
-              <h3>Test out your code here!</h3>
-            </div>
-            <p>Enter you solution code snippet into the editor and check if the code is working fine. To get help from the Bot, just paste the code to the designated solution text box above.</p>
-            <div data-pym-src="https://www.jdoodle.com/embed/v1/8777795311e06c51"> </div>
-            <script src="https://www.jdoodle.com/assets/jdoodle-pym.min.js" type="text/javascript"> </script>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -170,8 +169,8 @@ https://templatemo.com/tm-589-lugx-gaming
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Design Thinking Lab - RV College of Engineering © 2024 <br>
-        Team Members: Goutami Sooda, Ahana Patil, Arya Vinod, Chandana S (3rd Sem CSE)</p>
+        <p>Design Thinking Lab - RV College of Engineering © 2024 </p>
+        <p>Team Members: Goutami Sooda, Ahana Patil, Arya Vinod, Chandana S (3rd Sem CSE)</p>
       </div>
     </div>
   </footer>
@@ -184,6 +183,7 @@ https://templatemo.com/tm-589-lugx-gaming
   <script src="{{ url_for('static', filename='assets/js/owl-carousel.js') }}"></script>
   <script src="{{ url_for('static', filename='assets/js/counter.js') }}"></script>
   <script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
 
   </body>
 </html>

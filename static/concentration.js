@@ -4,74 +4,59 @@ Purpose: Responsible for the main game logic
 
 const qlist = [
 `
-for (int i = 0; i < 5; i++) {
-    for (int j = 0; j <= i; j++) {
+for (int i=0;i<5;i++) {
+    for (int j=0;j<=i;j++) {
         printf("* ");
     }
 }
 `,
 `
-for (int i = 0; i < 5; i++) {   
-    for (int j = 0; j < 2 * (rows - i) - 1; j++) { 
-        printf(" "); 
-    } 
-    for (int k = 0; k < 2 * i + 1; k++) { 
-        printf("* "); 
-    } 
+for (int i=0;i<5;i++) { 
+for (int j=0;j<5-i;j++) { 
+printf("j "); 
+	} 
 } 
 `,
 `
-for (int i = 0; i < 5; i++) { 
-    for (int j = 0; j < rows - i - 1; j++) { 
-        printf(" "); 
-    } 
-    for (int k = 0; k < rows; k++) { 
-        printf("* "); 
-    } 
+for (int i=0;i<5;i++) { 
+for (int j=0; j<5;j++) { 
+if (i>0 && i<4 && j>0 && j<4)  
+	printf("  ");  
+else  
+	printf("* "); 
+	}
 } 
 `,
 `
 int rows = 4; 
 int n = 1; 
-for (int i = 0; i < rows; i++) { 
-    for (int j = 0; j <= i; j++) { 
-        printf("%d", n++); 
+for (int i=0;i<rows;i++) { 
+for (int j=0;j<=i;j++) { 
+printf("%d",n++); 
     } 
 } 
 `,
 `
-for (int i = 1; i <= rows; i++) { 
-    for (int j = 0; j < rows - i; j++) { 
-        printf(" "); 
-    } 
-    int C = 1; 
-    for (int k = 1; k <= i; k++) { 
-        printf("%d", C); 
-        C = C * (i - k) / k; 
-    } 
-} 
-`,
-`
-inti = 1;  
-do {  
-    printf("Iteration %d", i);  
-    i++;  
-} while (1); 
-`,
-`
-int i=1,number=50,b=30;       
-while(i<=10 && b%20==0){    
-    printf("%d",(number*i));    
-    i++;
-    b=b+10;    
-}    
-`,
-`
-int x = 10, y = 2;  
+int x=10, y=2;  
 while(x+y-1)  
 {  
-    printf("%d %d",x--,y--);  
+printf("%d %d",x--,y--);  
 }  
+`,
+`
+I run atleast once and need not 
+stop unless you give me a good 
+reason to! I am a _______ loop!
+`,
+`
+I am an infinity loop!
+Put a face to my name!
+`,
+`
+int k = 0;
+for (k < 3; k++)
+printf("Hello");
+What does this result in?
 `
 ]
 
@@ -84,17 +69,17 @@ const alist = [
 * * * * *
 `,
 `
-    *
-   * *
-  * * *
- * * * *
-* * * * *
+1 2 3 4 5
+1 2 3 4
+1 2 3 
+1 2
+1
 `,
 `
-    * * * * *   
-   * * * * *    
-  * * * * *    
- * * * * *      
+* * * * *
+*       *
+*       *
+*       *
 * * * * *
 `,
 `
@@ -104,33 +89,20 @@ const alist = [
 7 8 9 10
 `,
 `
-    1 
-   1 1 
-  1 2 1 
- 1 3 3 1 
-1 4 6 4 1
-`,
-`
-Iteration 1
-Iteration 2
-Iteration 3
-Iteration 4
-Iteration 5
-.....
-`,
-`
-100
-200
-300
-400
-500
-`,
-`
 10 2
 9  1
 8  0
 7  -1
 .....
+`,
+`
+do - while loop
+`,
+`
+for(;;)
+`,
+`
+Compile - time error!
 `
 ]
 
@@ -244,6 +216,8 @@ function chosenBlock(i, j, id) {
 				$("#tries").html("Guesses: " + currentGuesses);
 
 				if (tracker.length > 1) {
+
+					setTimeout(function() {
 					var firstTileContent = tracker[0];
 					var secondTileContent = tracker[1];
 
@@ -252,23 +226,28 @@ function chosenBlock(i, j, id) {
 
 					// Search for the content of the flipped tiles in qlist and alist
 					var firstTileIndex = qlist.indexOf(firstTileContent);
+					if (firstTileIndex === -1) {
+						firstTileIndex = alist.indexOf(firstTileContent);
+					}
 					console.log("First Tile Index: ", firstTileIndex);
 
 					var secondTileIndex = alist.indexOf(secondTileContent);
+					if (secondTileIndex === -1) {
+						secondTileIndex = qlist.indexOf(secondTileContent);
+					}
 					console.log("Second Tile Index: ", secondTileIndex);
 
 
 					if (firstTileIndex !== -1 && secondTileIndex !== -1 && firstTileIndex === secondTileIndex) {
 						// If both values are found and their indices are equal, leave the tiles flipped
-						while (tracker.length !== 0) {
 							tracker.pop();
-						}
-						while (idTracker.length !== 0) {
+							tracker.pop();
 							idTracker.pop();
-						}
+							idTracker.pop();
+						
 					} 
 					
-					if (firstTileIndex !== secondTileIndex) {
+					if (firstTileIndex !== secondTileIndex || firstTileIndex == -1 || secondTileIndex == -1) {
 						deactivate(data.id); // Deactivate the current selection
 						deactivate(idTracker[0]); // Deactivate the one before as well
 						tracker.pop(); // Empty out the arrays to be filled with new ones
@@ -277,6 +256,7 @@ function chosenBlock(i, j, id) {
 						idTracker.pop();
 						scan(guesses); // scan for guesses
 					}
+					}, 500);
 				}
 			}
 		},
@@ -322,15 +302,5 @@ function scan(guesses) {
 			}
 			number++;
 		}
-	}
-	if (count === bigBoard * smallBoard) {
-		var nothing = "";
-		alert("You made " + guesses / 2 + " guesses!");
-		$("#board").empty(); // Selects the tag and empties all the children associated with the tag
-		$("#board").append("<h2>Loading up A New Level!</h2>");
-		window.setTimeout(function() {
-			$("#board").empty();
-			loadMe();
-		}, 3000)
 	}
 }
